@@ -1,0 +1,7 @@
+<h2>Parent component</h2>
+{{messageFromChild}}
+<div class="form-group">
+    <input type="text" class="form-control"  [(ngModel)]="parentComponentMessage" #ctrl="ngModel" required>
+</div>
+{{ctrl.valid}}
+<app-child [parentComponentMessage]="parentComponentMessage" (sendMessageToParentComponent)="GetChildData($event)"></app-child>
